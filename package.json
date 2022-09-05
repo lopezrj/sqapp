@@ -1,0 +1,20 @@
+{
+  "name": "sqapp",
+  "version": "1.0.0",
+  "description": "Sqlite in electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "./node_modules/.bin/electron-rebuild -f -w sqlite3",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lopezrj",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^20.1.1",
+    "install": "^0.13.0"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^3.2.9"
+  }
+}
