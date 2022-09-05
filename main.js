@@ -1,7 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
-const fs = require('fs')
 
 function createWindow () {
   // Create the browser window.
@@ -49,23 +48,18 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-//import getNames from "./units.js";
-/*
-async function getNames() {
-  console.log("Here");
-  let res = "Names";
-  return res;
-}
-*/
+// const {getNames} = require("./units.js")
 
-//const getNames = async () => {
-function getNames() {
-  fs.readFile("./package.json", "utf8", (err, jsonString) => {
-    if (err) {
-      console.log("File read failed:", err);
-      return err;
-    }
-    console.log("File data:", jsonString);
-    return jsonString;
+// /*
+const fs = require('fs/promises')
+async function getNames() {
+  return fs.readFile("./package.json", "utf8", (_ , jsonString) => {
+//    if (err) {
+//      console.log("File read failed:", err);
+//      return err;
+//    }
+    console.log("File data:", jsonString.toString());
+    return jsonString.toString();
   });
-}
+} 
+//*/
