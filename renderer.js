@@ -19,7 +19,7 @@ btn.addEventListener('click', async () => {
   console.log("Here")
   namesElement.innerText= names
 })
-*/
+
 
 const func = async () => {
     const response = await window.api.ping()
@@ -27,3 +27,5 @@ const func = async () => {
   }
   
 func()
+
+*/
