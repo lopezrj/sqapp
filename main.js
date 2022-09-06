@@ -27,6 +27,7 @@ app.whenReady().then(() => {
 
   ipcMain.handle('ping', () => 'pong')
   ipcMain.handle('getNames', getNames)
+  ipcMain.handle('getUnits', getUnits)
 
   createWindow()
 
@@ -48,9 +49,11 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-// const {getNames} = require("./units.js")
+const {getNames} = require("./units.js")
 
-// /*
+const {getUnits} = require("./unitsdb.js")
+
+/*
 const fs = require('fs/promises')
 async function getNames() {
   return fs.readFile("./package.json", "utf8", (_ , jsonString) => {

@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    let names = await window.api.getNames();
-    document.getElementById("names").innerHTML =names;
+  // let names = await window.api.getNames();
+
+  // document.getElementById("names").innerHTML =names;
+  //let units = new Array() 
+  units = await window.api.getUnits();
+  unitNames = units.map((item) => {return item.Unit }).join("<br />")
+  console.log(unitNames)
+  document.getElementById("names").innerHTML = unitNames;
 })
 
 /*

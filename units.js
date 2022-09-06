@@ -1,6 +1,6 @@
 const { readFile } = require('fs/promises');
 
-return async function getNames() {
+getNames = async () => {
   return readFile("./package.json", "utf8", (_ , jsonString) => {
 //    if (err) {
 //      console.log("File read failed:", err);
@@ -10,3 +10,6 @@ return async function getNames() {
     return jsonString.toString();
   });
 }
+
+module.exports = { getNames }
+//exports.getNames = getNames
