@@ -11,6 +11,7 @@
   "author": "lopezrj",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.2.0",
     "electron": "^20.1.1",
     "knex": "^2.3.0",
     "sqlite3": "^5.0.11"

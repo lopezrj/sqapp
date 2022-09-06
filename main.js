@@ -25,7 +25,6 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
 
-  ipcMain.handle('ping', () => 'pong')
   ipcMain.handle('getNames', getNames)
   ipcMain.handle('getUnits', getUnits)
 
@@ -49,20 +48,6 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-const {getNames} = require("./units.js")
+const {getNames} = require("./unitsjson.js")
 
 const {getUnits} = require("./unitsdb.js")
-
-/*
-const fs = require('fs/promises')
-async function getNames() {
-  return fs.readFile("./package.json", "utf8", (_ , jsonString) => {
-//    if (err) {
-//      console.log("File read failed:", err);
-//      return err;
-//    }
-    console.log("File data:", jsonString.toString());
-    return jsonString.toString();
-  });
-} 
-//*/

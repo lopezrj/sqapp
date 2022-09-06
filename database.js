@@ -1,7 +1,5 @@
 // Setting up an SQLite database: ./app/database.js
-
-import 'sqlite3';
-import knex from 'knex';
+let knex = require("knex") 
 
 const database = knex({
   client: 'sqlite3',
@@ -11,5 +9,4 @@ const database = knex({
   useNullAsDefault: true
 });
 
-export default database;
-
+module.exports = { database }
